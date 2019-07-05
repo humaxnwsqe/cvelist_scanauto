@@ -13,7 +13,7 @@ import time
 
 class TestCVESCANKEYWORDRESULT_screen():
     '''
-    def setup_method(self, method):    
+    def setup_method(self, method):
         #print("\n=============")
         #print(id(self))
         #print("setup_method")
@@ -22,7 +22,7 @@ class TestCVESCANKEYWORDRESULT_screen():
         #pdb.set_trace()
         #browser = browser()
         #pdb.set_trace()
-        self.vars = {}        
+        self.vars = {}
 
     def teardown_method(self, method):
         browser.quit()
@@ -120,3 +120,4 @@ class TestCVESCANKEYWORDRESULT_screen():
     
 
 pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
+#pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    

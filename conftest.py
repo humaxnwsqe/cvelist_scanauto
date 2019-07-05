@@ -9,6 +9,7 @@ import pytest
 
 from selenium import webdriver
 import pytest
+import os
 driver = None
 
 '''
@@ -27,23 +28,32 @@ def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
     extra = getattr(report, 'extra', [])
+    
+    #To get current path
+    cur_path = os.getcwd()
+    #print("\n"+ cur_path)
 
+    #To set report result path from current path
+    report_path = os.path.join(cur_path, "resultreport\\")
+    
+    #To add path as html code
+    path_for_html = report_path.replace("\\", "/")
+    
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
         if (report.skipped and xfail) or (report.failed and not xfail):
             file_name = report.nodeid.replace("::", "_")+".png"
-            _capture_screenshot(file_name)
+            _capture_screenshot(report_path, file_name)
             if file_name:
-                html = '<div><img src="file:/D:/Selenium_firefox/cvescanauto/resultreport/%s" alt="screenshot" style="width:600px;height:228px;" ' \
+                html = '<div><img src="file:/' + path_for_html + '%s" alt="screenshot" style="width:600px;height:228px;" ' \
                        'onclick="window.open(this.src)" align="right"/></div>'%file_name
                 extra.append(pytest_html.extras.html(html))
         report.extra = extra
 
 
-def _capture_screenshot(name):
-    driver.get_screenshot_as_file("D:\\Selenium_firefox\\cvescanauto\\resultreport\\"+name)
-    #    D:\\Selenium_firefox\\cvescanauto\\resultreport\\
-    # driver.get_screenshot_as_file(name)
+def _capture_screenshot(path, file_name):
+    driver.get_screenshot_as_file(path + file_name)
+
 
 
 @pytest.fixture(scope='session', autouse=True)
