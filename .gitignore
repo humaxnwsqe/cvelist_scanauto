@@ -1,0 +1,6 @@
+# Created by pytest automatically.
+*.zip
+.pytest_cache/
+.vscode/
+__pycache__/
+resultreport/
