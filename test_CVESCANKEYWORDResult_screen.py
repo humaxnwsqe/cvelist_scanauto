@@ -120,4 +120,4 @@ class TestCVESCANKEYWORDRESULT_screen():
     
 
 #pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
-pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    
+#pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    
