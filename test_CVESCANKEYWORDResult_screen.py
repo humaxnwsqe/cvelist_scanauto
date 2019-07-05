@@ -119,5 +119,5 @@ class TestCVESCANKEYWORDRESULT_screen():
         browser.close()
     
 
-pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
+#pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
 #pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    
