@@ -44,9 +44,9 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 6 | assertText | css=.smaller:nth-child(2) | There are 4 CVE entries that match your search. | 
         time.sleep(3)
         assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 4 CVE entries that match your search."
-        assert False
+        #assert False
         # 7 | close |  |  | 
-        browser.close()
+        #browser.close()
 
     
     def test_cVESCANKEYmongoose(self, browser):
@@ -63,14 +63,14 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 5 | sendKeys | name=keyword | ${KEY_ENTER} | 
         browser.find_element(By.NAME, "keyword").send_keys(Keys.ENTER)
         # 6 | click | css=.smaller:nth-child(2) |  | 
-        time.sleep(3)
-        browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
+        #time.sleep(3)
+        #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
         # 7 | assertText | css=.smaller:nth-child(2) | There are 25 CVE entries that match your search. | 
         time.sleep(3)
         assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 26 CVE entries that match your search."
-        assert False
+        #assert False
         # 8 | close |  |  | 
-        browser.close()
+        #browser.close()
     
     def test_cVESCANKEYecos(self, browser):
         # Test name: CVESCAN_KEY_ecos
@@ -86,14 +86,14 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 5 | sendKeys | name=keyword | ${KEY_ENTER} | 
         browser.find_element(By.NAME, "keyword").send_keys(Keys.ENTER)
         # 6 | click | css=.smaller:nth-child(2) |  | 
-        time.sleep(3)
-        browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
+        #time.sleep(3)
+        #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
         # 7 | assertText | css=.smaller:nth-child(2) | There are 12 CVE entries that match your search. | 
         time.sleep(3)
         assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 12 CVE entries that match your search."
-        assert False
+        #assert False
         # 8 | close |  |  | 
-        browser.close()
+        #browser.close()
     
     def test_cVESCANKEYbroadcom(self, browser):
         # Test name: CVESCAN_KEY_broadcom
@@ -109,15 +109,15 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 5 | sendKeys | name=keyword | ${KEY_ENTER} | 
         browser.find_element(By.NAME, "keyword").send_keys(Keys.ENTER)
         # 6 | click | css=.smaller:nth-child(2) |  | 
-        time.sleep(3)
-        browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
+        #time.sleep(3)
+        #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
         # 7 | assertText | css=.smaller:nth-child(2) | There are 67 CVE entries that match your search. | 
         time.sleep(3)
         assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 67 CVE entries that match your search."
-        assert False
+        #assert False
         # 8 | close |  |  | 
-        browser.close()
+        #browser.close()
     
 
 #pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
-#pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    
+pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    

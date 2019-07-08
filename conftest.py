@@ -52,6 +52,7 @@ def pytest_runtest_makereport(item):
 
 
 def _capture_screenshot(path, file_name):
+    #D:\pythonproject\cvelist_scanauto\resultreport
     driver.get_screenshot_as_file(path + file_name)
 
 
@@ -60,10 +61,8 @@ def _capture_screenshot(path, file_name):
 def browser():
     global driver
     if driver is None:
-        driver = webdriver.Chrome()
+        driver = webdriver.Firefox()
     yield driver
     driver.quit()
     #driver.close()
-    return driver
-
-pytest
+    #return driver

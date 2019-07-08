@@ -45,11 +45,22 @@ msg.attach(MIMEText(body,'plain'))
 ############### ↓ 첨부파일이 없다면 삭제 가능  ↓ ########################
 # 첨부파일 경로/이름 지정하기
 
+#To get current path
+cur_path = os.getcwd()
+#print("\n"+ cur_path)
 
-zip('D:\\Selenium_firefox\\cvescanauto\\resultreport', 'D:\\Selenium_firefox\\cvescanauto\\resultreport.zip')
+#To set report result path from current path
+report_path = os.path.join(cur_path, "resultreport\\")
+
+archive_path = cur_path + "\\"
+
+filename ='resultreport.zip' 
+target_zip = archive_path + filename
+
+zip(report_path, target_zip)
 
 #filename='./resultreport/report.html'  
-filename='resultreport.zip'  
+#filename='resultreport.zip'  
 attachment  =open(filename,'rb')
 
 part = MIMEBase('application','octet-stream')
