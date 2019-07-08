@@ -65,4 +65,4 @@ def browser():
     yield driver
     driver.quit()
     #driver.close()
-    #return driver
+    return driver
