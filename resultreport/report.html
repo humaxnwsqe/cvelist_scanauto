@@ -235,7 +235,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 08-Jul-2019 at 08:00:27 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v1.21.1</p>
+    <p>Report generated on 15-Jul-2019 at 09:14:55 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v1.21.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -251,8 +251,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.7.2</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 25.29 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>4 tests ran in 56.12 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -263,20 +263,21 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_CVESCANKEYWORDResult_screen.py::TestCVESCANKEYWORDRESULT_screen::test_cVESCANKEYmongoose</td>
+          <td class="col-duration">3.79</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div><div><img src="file:/D:/pythonproject/cvelist_scanauto/resultreport/test_CVESCANKEYWORDResult_screen.py_TestCVESCANKEYWORDRESULT_screen_test_cVESCANKEYmongoose.png" alt="screenshot" style="width:600px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
+            <div class="log">self = &lt;test_CVESCANKEYWORDResult_screen.TestCVESCANKEYWORDRESULT_screen object at 0x000001401D3268D0&gt;<br/>browser = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;a381114c-17f6-47f6-9f0c-7c0d227c89d2&quot;)&gt;<br/><br/>    def test_cVESCANKEYmongoose(self, browser):<br/>        # Test name: CVESCAN_KEY_mongoose<br/>        # Step # | name | target | value | comment<br/>        # 1 | open | /cve/search_cve_list.html |  |<br/>        browser.get(&quot;https://cve.mitre.org/cve/search_cve_list.html&quot;)<br/>        # 2 | setWindowSize | 1154x854 |  |<br/>        browser.set_window_size(1154, 854)<br/>        # 3 | click | name=keyword |  |<br/>        browser.find_element(By.NAME, &quot;keyword&quot;).click()<br/>        # 4 | type | name=keyword | mongoose |<br/>        browser.find_element(By.NAME, &quot;keyword&quot;).send_keys(&quot;mongoose&quot;)<br/>        # 5 | sendKeys | name=keyword | ${KEY_ENTER} |<br/>        browser.find_element(By.NAME, &quot;keyword&quot;).send_keys(Keys.ENTER)<br/>        # 6 | click | css=.smaller:nth-child(2) |  |<br/>        #time.sleep(3)<br/>        #browser.find_element(By.CSS_SELECTOR, &quot;.smaller:nth-child(2)&quot;).click()<br/>        # 7 | assertText | css=.smaller:nth-child(2) | There are 25 CVE entries that match your search. |<br/>        time.sleep(3)<br/>&gt;       assert browser.find_element(By.CSS_SELECTOR, &quot;.smaller:nth-child(2)&quot;).text == &quot;There are 26 CVE entries that match your search.&quot;<br/><span class="error">E       AssertionError: assert &#x27;There are 27... your search.&#x27; == &#x27;There are 26 ... your search.&#x27;</span><br/><span class="error">E         - There are 27 CVE entries that match your search.</span><br/><span class="error">E         ?            ^</span><br/><span class="error">E         + There are 26 CVE entries that match your search.</span><br/><span class="error">E         ?            ^</span><br/><br/>test_CVESCANKEYWORDResult_screen.py:70: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_CVESCANKEYWORDResult_screen.py::TestCVESCANKEYWORDRESULT_screen::test_cVESCANKEYhumax</td>
-          <td class="col-duration">6.74</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_CVESCANKEYWORDResult_screen.py::TestCVESCANKEYWORDRESULT_screen::test_cVESCANKEYmongoose</td>
-          <td class="col-duration">3.82</td>
+          <td class="col-duration">6.17</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -285,7 +286,7 @@ function filter_table(elem) {
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_CVESCANKEYWORDResult_screen.py::TestCVESCANKEYWORDRESULT_screen::test_cVESCANKEYecos</td>
-          <td class="col-duration">3.76</td>
+          <td class="col-duration">3.75</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -294,7 +295,7 @@ function filter_table(elem) {
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_CVESCANKEYWORDResult_screen.py::TestCVESCANKEYWORDRESULT_screen::test_cVESCANKEYbroadcom</td>
-          <td class="col-duration">3.74</td>
+          <td class="col-duration">3.76</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
