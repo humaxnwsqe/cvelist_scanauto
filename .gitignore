@@ -1,6 +1,9 @@
 # Created by pytest automatically.
-*.zip
 .pytest_cache/
 .vscode/
 __pycache__/
 resultreport/
+geckodriver.log
+resultreport.zip
+.pytest_cache/v/cache/lastfailed
+resultreport/report.html
