@@ -1,4 +1,4 @@
-import pytest
+#import pytest
 
 # @pytest.yield_fixture(scope='session')
 # def browser():
@@ -45,10 +45,19 @@ def pytest_runtest_makereport(item):
             file_name = report.nodeid.replace("::", "_")+".png"
             _capture_screenshot(report_path, file_name)
             if file_name:
-                html = '<div><img src="file:/' + path_for_html + '%s" alt="screenshot" style="width:600px;height:228px;" ' \
+            #############################################################################
+            # Case 1. An absolute path at the point of PC code is running. It will be only availalbe at the PC.
+            #############################################################################
+            #    html = '<div><img src="file:/' + path_for_html + '%s" alt="screenshot" style="width:600px;height:228px;" ' \
+            #           'onclick="window.open(this.src)" align="right"/></div>'%file_name
+            #############################################################################
+            # Case 2. A relative path which is available for all states. 
+            #############################################################################
+                html = '<div><img src="%s" alt="screenshot" style="width:600px;height:228px;" ' \
                        'onclick="window.open(this.src)" align="right"/></div>'%file_name
                 extra.append(pytest_html.extras.html(html))
         report.extra = extra
+
 
 
 def _capture_screenshot(path, file_name):
