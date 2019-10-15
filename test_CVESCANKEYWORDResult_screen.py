@@ -67,7 +67,7 @@ class TestCVESCANKEYWORDRESULT_screen():
         #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
         # 7 | assertText | css=.smaller:nth-child(2) | There are 25 CVE entries that match your search. | 
         time.sleep(3)
-        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 27 CVE entries that match your search."
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 28 CVE entries that match your search."
         #assert False
         # 8 | close |  |  | 
         #browser.close()
