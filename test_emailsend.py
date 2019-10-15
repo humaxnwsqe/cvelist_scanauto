@@ -7,6 +7,14 @@ import zipfile
 import os
 
 
+def removeExtensionFile(filePath, fileExtension):
+    if os.path.exists(filePath):
+        for file in os.scandir(filePath):
+            if file.name.endswith(fileExtension):
+                os.remove(file.path)
+        return "Removed file: " + fileExtension
+    else:
+        return "Directory not found"
 
 def zip(src_path, dest_file):
     with zipfile.ZipFile(dest_file, 'w') as zf:
@@ -49,6 +57,7 @@ msg.attach(MIMEText(body,'plain'))
 cur_path = os.getcwd()
 #print("\n"+ cur_path)
 
+
 #To set report result path from current path
 report_path = os.path.join(cur_path, "resultreport\\")
 
@@ -57,6 +66,10 @@ archive_path = cur_path + "\\"
 filename ='resultreport.zip' 
 target_zip = archive_path + filename
 
+#To remove files except folder included
+removeExtensionFile(report_path, ".PNG".lower())
+
+#To zip a folder
 zip(report_path, target_zip)
 
 #filename='./resultreport/report.html'  
