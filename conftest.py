@@ -18,6 +18,15 @@ def pytest_runtest_setup(item):
     print("\n######################\n setting up\n######################\n", item)
 '''
 
+def removeExtensionFile(filePath, fileExtension):
+    if os.path.exists(filePath):
+        for file in os.scandir(filePath):
+            if file.name.endswith(fileExtension):
+                os.remove(file.path)
+        return "Removed file: " + fileExtension
+    else:
+        return "Directory not found"
+
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """
@@ -34,8 +43,8 @@ def pytest_runtest_makereport(item):
     #print("\n"+ cur_path)
 
     #To set report result path from current path
-    report_path = os.path.join(cur_path, "resultreport\\")
-    
+    report_path = os.path.join(cur_path, "resultreport\\")  
+
     #To add path as html code
     path_for_html = report_path.replace("\\", "/")
     
@@ -69,6 +78,14 @@ def _capture_screenshot(path, file_name):
 @pytest.fixture(scope='session', autouse=True)
 def browser():
     global driver
+
+    #To remove files except folder included
+    cur_path = os.getcwd()
+
+    report_path = os.path.join(cur_path, "resultreport\\")
+
+    removeExtensionFile(report_path, ".PNG".lower())
+
     if driver is None:
         driver = webdriver.Firefox()
     yield driver
