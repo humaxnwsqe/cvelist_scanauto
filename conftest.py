@@ -59,6 +59,7 @@ def pytest_runtest_makereport(item):
         report.extra = extra
 
 
+
 def _capture_screenshot(path, file_name):
     #D:\pythonproject\cvelist_scanauto\resultreport
     driver.get_screenshot_as_file(path + file_name)
