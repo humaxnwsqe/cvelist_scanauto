@@ -13,7 +13,7 @@ def zip(src_path, dest_file):
         for (path, dir, files) in os.walk(src_path):
             for file in files:
                 fullpath = os.path.join(path, file)
-                relpath = os.path.relpath(fullpath, rootpath);
+                relpath = os.path.relpath(fullpath, rootpath)
                 zf.write(fullpath, relpath, zipfile.ZIP_DEFLATED)
         zf.close()
 '''
