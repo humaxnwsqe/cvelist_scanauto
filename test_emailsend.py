@@ -5,6 +5,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import zipfile
 import os
+import datetime
 
 
 def zip(src_path, dest_file):
@@ -13,7 +14,7 @@ def zip(src_path, dest_file):
         for (path, dir, files) in os.walk(src_path):
             for file in files:
                 fullpath = os.path.join(path, file)
-                relpath = os.path.relpath(fullpath, rootpath);
+                relpath = os.path.relpath(fullpath, rootpath)
                 zf.write(fullpath, relpath, zipfile.ZIP_DEFLATED)
         zf.close()
 '''
@@ -26,10 +27,19 @@ def unzip(source_file, dest_path):
 # 지메일 아이디,비번 입력하기
 email_user = 'humaxnwsqe@gmail.com'      #<ID> 본인 계정 아이디 입력
 email_password = 'humax2015@!'      #<PASSWORD> 본인 계정 암호 입력
-email_send = ['hslee4@humaxdigital.com','jkoh@humaxdigital.com']         # <받는곳주소> 수신자 이메일 abc@abc.com 형태로 입력
+#email_send = ['hslee4@humaxdigital.com','jkoh@humaxdigital.com']         # <받는곳주소> 수신자 이메일 abc@abc.com 형태로 입력
+email_send = ['hslee4@humaxdigital.com']
+
+nowInfo = datetime.datetime.now()
+
+if not nowInfo is None:
+    weeknum = datetime.date(nowInfo.year, nowInfo.month, nowInfo.day).isocalendar()[1]
+else:
+    print("Now information value is null !")
+    weeknum = 0
 
 # 제목 입력
-subject = 'CVE Scan Result' 
+subject = str(weeknum)+' week(s) CVE Scan Result' 
 
 msg = MIMEMultipart()
 msg['From'] = email_user
@@ -54,7 +64,17 @@ report_path = os.path.join(cur_path, "resultreport\\")
 
 archive_path = cur_path + "\\"
 
-filename ='resultreport.zip' 
+nowInfo = datetime.datetime.now()
+
+#print(weeknum)
+
+if not weeknum is None:
+    filename = 'resultreport_'+str(weeknum)+'.zip'
+else:
+    filename ='resultreport.zip' 
+
+print(filename)
+
 target_zip = archive_path + filename
 
 #To zip a folder
