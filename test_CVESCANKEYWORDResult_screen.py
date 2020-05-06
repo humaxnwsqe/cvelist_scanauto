@@ -41,9 +41,9 @@ class TestCVESCANKEYWORDRESULT_screen():
         browser.find_element(By.NAME, "keyword").send_keys("humax")
         # 5 | sendKeys | name=keyword | ${KEY_ENTER} | 
         browser.find_element(By.NAME, "keyword").send_keys(Keys.ENTER)
-        # 6 | assertText | css=.smaller:nth-child(2) | There are 4 CVE entries that match your search. | 
+        # 6 | assertText | css=.smaller:nth-child(2) | There are 8 CVE entries that match your search. | 
         time.sleep(3)
-        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 4 CVE entries that match your search."
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 8 CVE entries that match your search."
         #assert False
         # 7 | close |  |  | 
         #browser.close()
@@ -65,9 +65,9 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 6 | click | css=.smaller:nth-child(2) |  | 
         #time.sleep(3)
         #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
-        # 7 | assertText | css=.smaller:nth-child(2) | There are 25 CVE entries that match your search. | 
+        # 7 | assertText | css=.smaller:nth-child(2) | There are 29 CVE entries that match your search. | 
         time.sleep(3)
-        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 28 CVE entries that match your search."
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 29 CVE entries that match your search."
         #assert False
         # 8 | close |  |  | 
         #browser.close()
@@ -111,9 +111,9 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 6 | click | css=.smaller:nth-child(2) |  | 
         #time.sleep(3)
         #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
-        # 7 | assertText | css=.smaller:nth-child(2) | There are 67 CVE entries that match your search. | 
+        # 7 | assertText | css=.smaller:nth-child(2) | There are 80 CVE entries that match your search. | 
         time.sleep(3)
-        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 67 CVE entries that match your search."
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 80 CVE entries that match your search."
         #assert False
         # 8 | close |  |  | 
         #browser.close()
