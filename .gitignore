@@ -5,6 +5,7 @@ __pycache__/*
 resultreport/*
 geckodriver.log
 resultreport.zip
+resultreport*.zip
 .pytest_cache/v/cache/lastfailed
 resultreport/report.html
 cvelistscanlenv/Lib/__pycache__/_bootlocale.cpython-37.pyc
