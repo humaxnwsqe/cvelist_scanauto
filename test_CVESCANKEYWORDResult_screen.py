@@ -118,6 +118,29 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 8 | close |  |  | 
         #browser.close()
     
+    def test_cVESCANKEYUPnP(self, browser):
+        # Test name: CVESCAN_KEY_UPnP
+        # Step # | name | target | value | comment
+        # 1 | open | /cve/search_cve_list.html |  | 
+        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # 2 | setWindowSize | 1154x854 |  | 
+        browser.set_window_size(1154, 854)
+        # 3 | click | name=keyword |  | 
+        browser.find_element(By.NAME, "keyword").click()
+        # 4 | type | name=keyword | broadcom | 
+        browser.find_element(By.NAME, "keyword").send_keys("upnp")
+        # 5 | sendKeys | name=keyword | ${KEY_ENTER} | 
+        browser.find_element(By.NAME, "keyword").send_keys(Keys.ENTER)
+        # 6 | click | css=.smaller:nth-child(2) |  | 
+        #time.sleep(3)
+        #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
+        # 7 | assertText | css=.smaller:nth-child(2) | There are 105 CVE entries that match your search. | 
+        time.sleep(3)
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 105 CVE entries that match your search."
+        #assert False
+        # 8 | close |  |  | 
+        #browser.close()
+    
 
 #pytest.main(['test_CVESCANKEYWORDResult_screen.py', '--html=./resultreport/report.html'])    
 #pytest.main(['test_CVESCANKEYWORDResult_screen.py'])    
