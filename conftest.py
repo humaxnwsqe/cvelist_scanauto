@@ -46,7 +46,7 @@ def pytest_runtest_makereport(item):
     report_path = os.path.join(cur_path, "resultreport\\")  
 
     #To add path as html code
-    path_for_html = report_path.replace("\\", "/")
+    #path_for_html = report_path.replace("\\", "/")
     
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
