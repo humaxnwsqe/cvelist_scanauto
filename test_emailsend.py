@@ -27,7 +27,7 @@ def unzip(source_file, dest_path):
 # 지메일 아이디,비번 입력하기
 email_user = 'humaxnwsqe@gmail.com'      #<ID> 본인 계정 아이디 입력
 email_password = 'humax2015@!'      #<PASSWORD> 본인 계정 암호 입력
-email_send = ['hslee4@humaxdigital.com','jkoh@humaxdigital.com','ar.kim@humaxdigital.com','reload7101@humaxdigital.com']         # <받는곳주소> 수신자 이메일 abc@abc.com 형태로 입력
+email_send = ['hslee4@humaxdigital.com','jkoh@humaxdigital.com','reload7101@humaxdigital.com']         # <받는곳주소> 수신자 이메일 abc@abc.com 형태로 입력
 #email_send = ['hslee4@humaxdigital.com']
 
 nowInfo = datetime.datetime.now()
