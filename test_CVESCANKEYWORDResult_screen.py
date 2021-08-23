@@ -134,9 +134,9 @@ class TestCVESCANKEYWORDRESULT_screen():
         # 6 | click | css=.smaller:nth-child(2) |  | 
         #time.sleep(3)
         #browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").click()
-        # 7 | assertText | css=.smaller:nth-child(2) | There are 126 CVE entries that match your search. | 
+        # 7 | assertText | css=.smaller:nth-child(2) | There are 129 CVE entries that match your search. | 
         time.sleep(10)
-        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 126 CVE Records that match your search."
+        assert browser.find_element(By.CSS_SELECTOR, ".smaller:nth-child(2)").text == "There are 129 CVE Records that match your search."
         #assert False
         # 8 | close |  |  | 
         #browser.close()
