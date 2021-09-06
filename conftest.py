@@ -88,6 +88,7 @@ def browser():
 
     if driver is None:
         driver = webdriver.Firefox()
+        driver.implicitly_wait(10)
     yield driver
     driver.quit()
     #driver.close()
