@@ -12,27 +12,30 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 class TestCVESCANKEYWORDRESULT_screen():
-    '''
-    def setup_method(self, method):
-        #print("\n=============")
-        #print(id(self))
-        #print("setup_method")
-        #browser = webdriver.Firefox()
-        browser = conftest.browser()
-        #pdb.set_trace()
-        #browser = browser()
-        #pdb.set_trace()
-        self.vars = {}
 
-    def teardown_method(self, method):
-        browser.quit()
-    '''
+    # def setup_method(self, method):
+    #     #print("\n=============")
+    #     #print(id(self))
+    #     #print("setup_method")
+    #     #browser = webdriver.Firefox()
+    #     browser = conftest.browser()
+    #     #pdb.set_trace()
+    #     #browser = browser()
+    #     #pdb.set_trace()
+    #     self.vars = {}
+
+    # def teardown_method(self, method):
+    #     browser.quit()
+
+    def setup_method(self, method):
+        self.cve_scansearch_url = "https://cve.mitre.org/cve/search_cve_list.html"
 
     def test_cVESCANKEYhumax(self, browser):     
         # Test name: CVESCAN_KEY_humax
         # Step # | name | target | value | comment
         # 1 | open | /cve/search_cve_list.html |  |         
-        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        browser.get(self.cve_scansearch_url )
         # 2 | setWindowSize | 1154x878 |  | 
         browser.set_window_size(1154, 878)
         # 3 | click | name=keyword |  | 
@@ -53,7 +56,8 @@ class TestCVESCANKEYWORDRESULT_screen():
         # Test name: CVESCAN_KEY_mongoose
         # Step # | name | target | value | comment
         # 1 | open | /cve/search_cve_list.html |  | 
-        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        browser.get(self.cve_scansearch_url )
         # 2 | setWindowSize | 1154x854 |  | 
         browser.set_window_size(1154, 854)
         # 3 | click | name=keyword |  | 
@@ -76,7 +80,8 @@ class TestCVESCANKEYWORDRESULT_screen():
         # Test name: CVESCAN_KEY_ecos
         # Step # | name | target | value | comment
         # 1 | open | /cve/search_cve_list.html |  | 
-        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        browser.get(self.cve_scansearch_url )
         # 2 | setWindowSize | 1154x854 |  | 
         browser.set_window_size(1154, 854)
         # 3 | click | name=keyword |  | 
@@ -99,7 +104,8 @@ class TestCVESCANKEYWORDRESULT_screen():
         # Test name: CVESCAN_KEY_broadcom
         # Step # | name | target | value | comment
         # 1 | open | /cve/search_cve_list.html |  | 
-        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        browser.get(self.cve_scansearch_url )
         # 2 | setWindowSize | 1154x854 |  | 
         browser.set_window_size(1154, 854)
         # 3 | click | name=keyword |  | 
@@ -122,7 +128,8 @@ class TestCVESCANKEYWORDRESULT_screen():
         # Test name: CVESCAN_KEY_UPnP
         # Step # | name | target | value | comment
         # 1 | open | /cve/search_cve_list.html |  | 
-        browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        # browser.get("https://cve.mitre.org/cve/search_cve_list.html")
+        browser.get(self.cve_scansearch_url )
         # 2 | setWindowSize | 1154x854 |  | 
         browser.set_window_size(1154, 854)
         # 3 | click | name=keyword |  | 
