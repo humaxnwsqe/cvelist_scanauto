@@ -26,7 +26,7 @@ jdcal==1.4
 Jinja2==2.10.1
 jmespath==0.9.4
 lazy-object-proxy==1.3.1
-lxml==4.3.3
+lxml==4.6.5
 lxmlproc==0.1
 MarkupSafe==1.1.1
 mccabe==0.6.1
